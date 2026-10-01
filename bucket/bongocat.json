@@ -1,0 +1,44 @@
+{
+  "version": "2.0.1",
+  "description": "Cross-platform desktop pet responding to keyboard, mouse and gamepad input",
+  "homepage": "https://github.com/ayangweb/BongoCat",
+  "license": "Apache-2.0",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/ayangweb/BongoCat/releases/download/v2.0.1/BongoCat_2.0.1_x64.exe",
+      "hash": "A463CE69E82908A2320185C05B70B3F4C20ED8537E8A754FF0AA5B45A80F35DC"
+    }
+  },
+  "installer": {
+    "script": [
+      "Start-Process \"$dir\\BongoCat_2.0.1_x64.exe\" -ArgumentList '/S', \"/D=$dir\" -Wait"
+    ]
+  },
+  "uninstaller": {
+    "script": [
+      "if (Test-Path \"$dir\\uninstall.exe\") { Start-Process \"$dir\\uninstall.exe\" -ArgumentList '/S' -Wait }"
+    ]
+  },
+  "bin": "bongocat-app.exe",
+  "shortcuts": [
+    [
+      "bongocat-app.exe",
+      "BongoCat"
+    ]
+  ],
+  "checkver": {
+    "github": "https://github.com/ayangweb/BongoCat"
+  },
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/ayangweb/BongoCat/releases/download/v$version/BongoCat_$version_x64.exe"
+      }
+    },
+    "installer": {
+      "script": [
+        "Start-Process \"$dir\\BongoCat_$version_x64.exe\" -ArgumentList '/S', \"/D=$dir\" -Wait"
+      ]
+    }
+  }
+}
