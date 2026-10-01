@@ -1,0 +1,31 @@
+{
+  "version": "1.1.0",
+  "description": "Screenshot, pin and OCR tool for Windows",
+  "homepage": "https://github.com/Tosfire/YanSnap",
+  "license": "MIT",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/Tosfire/YanSnap/releases/download/v1.1.0/YanSnap-1.1.0-win-x64-portable.zip",
+      "hash": "4C17C3A395D1D7AAEE1E7B0AB2E6D1384D9C2EEAD7DE6615D57AEBE8EFAEC14C"
+    }
+  },
+  "extract_dir": "YanSnap-1.1.0-win-x64-portable",
+  "bin": "YanSnap.exe",
+  "shortcuts": [
+    [
+      "YanSnap.exe",
+      "YanSnap"
+    ]
+  ],
+  "checkver": {
+    "github": "https://github.com/Tosfire/YanSnap"
+  },
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/Tosfire/YanSnap/releases/download/v$version/YanSnap-$version-win-x64-portable.zip"
+      }
+    },
+    "extract_dir": "YanSnap-$version-win-x64-portable"
+  }
+}
